@@ -1,0 +1,11 @@
+{
+  "name": "File operations",
+  "summary": "copy / move / mkdir / delete，路径全部限制在 workspace 内。",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": [
+    "official-port",
+    "file-operations"
+  ],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-file-ops"
+}

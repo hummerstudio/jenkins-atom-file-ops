@@ -1,0 +1,67 @@
+{
+  "atomCode": "file-ops",
+  "name": "File operations",
+  "version": "1.0.0",
+  "description": "copy / move / mkdir / delete，路径全部限制在 workspace 内。",
+  "execution": {
+    "packagePath": "file-ops.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp file-ops.jar com.jenkinschina.atom.sdk.AtomRunner"
+  },
+  "input": {
+    "operation": {
+      "label": "操作",
+      "type": "selector",
+      "default": "copy",
+      "options": [
+        "copy",
+        "move",
+        "mkdir",
+        "delete"
+      ]
+    },
+    "pattern": {
+      "label": "匹配的文件（glob，逗号分隔）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "target": {
+      "label": "目标路径（workspace 相对）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "flatten": {
+      "label": "复制时压平目录结构",
+      "type": "checkbox",
+      "default": "false"
+    }
+  },
+  "output": {
+    "operation": {
+      "type": "string",
+      "description": "操作"
+    },
+    "files": {
+      "type": "string",
+      "description": "处理数量"
+    },
+    "deleted": {
+      "type": "string",
+      "description": "删除数量"
+    },
+    "target": {
+      "type": "string",
+      "description": "目标"
+    },
+    "created": {
+      "type": "string",
+      "description": "创建的目录"
+    }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": {
+      "runner": ">=0.4.0"
+    }
+  }
+}
